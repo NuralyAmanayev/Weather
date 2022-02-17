@@ -20,7 +20,9 @@ class ViewController: UIViewController{//, CLLocationManagerDelegate{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        networkManager.requestWeather(result: { (_: [WeatherModel]) in
+            return
+        }, latitude: getLocation.latitude, longitude: getLocation.longitude)
         
         // Do any additional setup after loading the view.
     }

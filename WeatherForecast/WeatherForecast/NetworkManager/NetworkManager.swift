@@ -8,7 +8,7 @@
 import Foundation
 
 class NetworkManager {
-    func requestWeather(result: @escaping ([WeatherModel]) -> (), latitude: String, longitude: String){
+    func requestWeather(result: @escaping ([WeatherModel]) -> (), latitude: Double, longitude: Double){
         let apiKey = "5308895e59599bce50322cbfd1f66036"
         let url =  "https://api.openweathermap.org/data/2.5/forecast?lat=\(latitude)&lon=\(longitude)&appid=\(apiKey)"
         URLSession.shared.dataTask(with: URL(string: url)!, completionHandler: { (data: Data?, response: URLResponse?, error: Error?) -> Void in

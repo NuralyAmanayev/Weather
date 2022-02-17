@@ -11,7 +11,8 @@ import CoreLocation
 class GetLocation:NSObject, CLLocationManagerDelegate {
     
     var manager: CLLocationManager?
-    
+    var latitude: Double = 0.0
+    var longitude: Double = 0.0
     func setupLocation(){
         manager = CLLocationManager()
         manager?.delegate = self
@@ -25,8 +26,8 @@ class GetLocation:NSObject, CLLocationManagerDelegate {
             return
         }
         print("\(currentLocation.coordinate.longitude)|\(currentLocation.coordinate.latitude)")
-//        self.long = currentLocation.coordinate.longitude
-//        var lat = first.coordinate.latitude
+        self.longitude = currentLocation.coordinate.longitude
+        self.latitude = currentLocation.coordinate.latitude
         manager.stopUpdatingLocation()
     }
     
