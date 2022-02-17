@@ -13,17 +13,19 @@ class ViewController: UIViewController{//, CLLocationManagerDelegate{
     var networkManager = NetworkManager()
     var weatherModel = [WeatherModel]()
     var getLocation = GetLocation()
-    
+//    var list = weatherMo
     
     
 
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        networkManager.requestWeather(result: { (_: [WeatherModel]) in
-            return
-        }, latitude: getLocation.latitude, longitude: getLocation.longitude)
+        networkManager.requestWeather { data in
+            DispatchQueue.main.async { [self] in
+                           self.weatherModel = data
+            }}
         
+        print(weatherModel)
         // Do any additional setup after loading the view.
     }
     
@@ -32,6 +34,6 @@ class ViewController: UIViewController{//, CLLocationManagerDelegate{
         getLocation.setupLocation()
     }
 
-    
+
 }
 
