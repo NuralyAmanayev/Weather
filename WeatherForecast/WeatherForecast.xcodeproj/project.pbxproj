@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		786C6CB827BF9F6F00FFA739 /* SpinerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 786C6CB727BF9F6F00FFA739 /* SpinerView.swift */; };
 		78A726B327BD7ECE0001616C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78A726B227BD7ECE0001616C /* AppDelegate.swift */; };
 		78A726B527BD7ECE0001616C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78A726B427BD7ECE0001616C /* SceneDelegate.swift */; };
 		78A726B727BD7ECE0001616C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78A726B627BD7ECE0001616C /* ViewController.swift */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		786C6CB727BF9F6F00FFA739 /* SpinerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinerView.swift; sourceTree = "<group>"; };
 		78A726AF27BD7ECE0001616C /* WeatherForecast.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeatherForecast.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		78A726B227BD7ECE0001616C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		78A726B427BD7ECE0001616C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -67,6 +69,7 @@
 				78A726C727BD7EF30001616C /* NetworkManager */,
 				78A726B227BD7ECE0001616C /* AppDelegate.swift */,
 				78A726B427BD7ECE0001616C /* SceneDelegate.swift */,
+				786C6CB727BF9F6F00FFA739 /* SpinerView.swift */,
 				78A726B627BD7ECE0001616C /* ViewController.swift */,
 				78A726B827BD7ECE0001616C /* Main.storyboard */,
 				78A726BB27BD7ECF0001616C /* Assets.xcassets */,
@@ -171,6 +174,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				78A726C927BD7F260001616C /* NetworkManager.swift in Sources */,
+				786C6CB827BF9F6F00FFA739 /* SpinerView.swift in Sources */,
 				78A726B727BD7ECE0001616C /* ViewController.swift in Sources */,
 				78A726B327BD7ECE0001616C /* AppDelegate.swift in Sources */,
 				78A726D527BDBCDF0001616C /* GetLocation.swift in Sources */,

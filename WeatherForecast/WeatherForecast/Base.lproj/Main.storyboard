@@ -15,9 +15,28 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="RS1-Bi-7Fd">
+                                <rect key="frame" x="10" y="54" width="394" height="798"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="394" id="WF8-KA-BuA"/>
+                                    <constraint firstAttribute="width" constant="394" id="XNe-zV-cZI"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="798" id="bjE-rV-Hs7"/>
+                                    <constraint firstAttribute="height" constant="798" id="zm0-2Y-zc1"/>
+                                </constraints>
+                            </tableView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="RS1-Bi-7Fd" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="4l3-fg-gaH"/>
+                            <constraint firstItem="RS1-Bi-7Fd" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="WQX-zE-prq"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="CustomTableView" destination="RS1-Bi-7Fd" id="y6a-o1-9i9"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
