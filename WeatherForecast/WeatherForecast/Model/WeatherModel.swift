@@ -11,4 +11,5 @@ struct WeatherModel: Codable {
     var description: String
     var icon: String
     
+    
 }
