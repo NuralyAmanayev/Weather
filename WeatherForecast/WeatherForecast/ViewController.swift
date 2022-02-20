@@ -8,17 +8,19 @@
 import UIKit
 //import CoreLocation
 
-class ViewController: UIViewController{//, CLLocationManagerDelegate{
+class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
+
+    //, CLLocationManagerDelegate{
 
     var networkManager = NetworkManager()
-    var weatherModel = [WeatherModel]()
+    var mainWeatherModel = [MainWeatherModel]()
+    var list = [ListModel]()
     var getLocation = GetLocation()
     var isMoreDataLoading = false
     var indicator = 0
     @IBOutlet weak var CustomTableView: UITableView!
-//    var loadingMoreView:SpinerView?
     var loadingMoreView = SpinerView()
-//    var list = weatherMo
+
     
     
 
@@ -26,13 +28,11 @@ class ViewController: UIViewController{//, CLLocationManagerDelegate{
     override func viewDidLoad() {
         super.viewDidLoad()
         loadingData()
-//        networkManager.requestWeather { data in
-//            DispatchQueue.main.async { [self] in
-//                           self.weatherModel = data
-//            }}
-//
-//        print(weatherModel)
-        // Do any additional setup after loading the view.
+        CustomTableView.delegate = self
+        CustomTableView.dataSource = self
+//        print(mainWeatherModel.count)
+
+
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -43,7 +43,7 @@ class ViewController: UIViewController{//, CLLocationManagerDelegate{
     
     func loadingData(){
         
-//        loadingMoreView.frame = CGRect(x: 30, y: 30, width: 100, height: 100)
+
         loadingMoreView.translatesAutoresizingMaskIntoConstraints = false
         loadingMoreView.widthAnchor.constraint(equalToConstant: 80).isActive = true
         loadingMoreView.heightAnchor.constraint(equalToConstant: 80).isActive = true
@@ -54,9 +54,8 @@ class ViewController: UIViewController{//, CLLocationManagerDelegate{
         networkManager.requestWeather { data in
             
             DispatchQueue.main.async {
-//                [self] in
                 self.loadingMoreView.startAnimating()
-                self.weatherModel = data
+                self.mainWeatherModel = data
                 self.CustomTableView.reloadData()
                 
                 Timer.scheduledTimer(withTimeInterval: 1.0, repeats: false){ timer in
@@ -71,6 +70,20 @@ class ViewController: UIViewController{//, CLLocationManagerDelegate{
             }
         }
     }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return mainWeatherModel.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let customCell = CustomTableView.dequeueReusableCell(withIdentifier: "CustomCell") as! TableViewCell
+        var mainWeatherModelArray = mainWeatherModel[indexPath.row]
+        customCell.JobLable.text = mainWeatherModel[0].list[0].dt_txt
+        return customCell
+    }
+                
+    
     
     
     

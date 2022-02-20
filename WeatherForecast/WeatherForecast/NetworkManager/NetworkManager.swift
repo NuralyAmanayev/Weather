@@ -15,7 +15,7 @@ class NetworkManager {
     var latitide = GetLocation.latitude
     var longitude = GetLocation.longitude
     
-    func requestWeather(result: @escaping ([WeatherModel]) -> ()){//}, latitude: Double, longitude: Double){
+    func requestWeather(result: @escaping ([MainWeatherModel]) -> ()){//}, latitude: Double, longitude: Double){
         let apiKey = "5308895e59599bce50322cbfd1f66036"
         let url =  "https://api.openweathermap.org/data/2.5/forecast?lat=\(self.latitide)&lon=\(self.longitude)&appid=\(apiKey)"
         URLSession.shared.dataTask(with: URL(string: url)!, completionHandler: { (data: Data?, response: URLResponse?, error: Error?) -> Void in
@@ -28,9 +28,9 @@ class NetworkManager {
 
             // convert data to models/some object
 
-            var json: WeatherModel?
+            var json: MainWeatherModel?
             do{
-                json = try JSONDecoder().decode(WeatherModel.self, from: data)
+                json = try JSONDecoder().decode(MainWeatherModel.self, from: data)
 //                print(json)
                 
                 
