@@ -15,6 +15,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     var networkManager = NetworkManager()
     var mainWeatherModel = [MainWeatherModel]()
     var list = [ListModel]()
+
     var getLocation = GetLocation()
     var isMoreDataLoading = false
     var indicator = 0
@@ -30,7 +31,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         loadingData()
         CustomTableView.delegate = self
         CustomTableView.dataSource = self
-//        print(mainWeatherModel.count)
+
 
 
     }
@@ -57,7 +58,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                 self.loadingMoreView.startAnimating()
                 self.mainWeatherModel = data
                 self.list = data[0].list
-            
                 self.CustomTableView.reloadData()
                 
                 Timer.scheduledTimer(withTimeInterval: 1.0, repeats: false){ timer in
@@ -81,16 +81,13 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let customCell = CustomTableView.dequeueReusableCell(withIdentifier: "CustomCell") as! TableViewCell
-//        var listModelArray = list[indexPath.row]
-        customCell.JobLable.text = list[0].dt_txt
+        var listModelArray = list[indexPath.row]
+        var mainWeatherModelArray = mainWeatherModel//[indexPath.row]
+        customCell.JobLable.text = /* //mainWeatherModel[0].city.name */getHourForDate(listModelArray.date)
         return customCell
     }
                 
-    
-    
-    
-    
-    
+
 
 }
 

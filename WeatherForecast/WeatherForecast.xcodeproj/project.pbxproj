@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		781DDEC727C526100059F0DE /* TimeFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781DDEC627C526100059F0DE /* TimeFunctions.swift */; };
 		784E370C27C296110067DB30 /* ListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784E370B27C296110067DB30 /* ListModel.swift */; };
 		784E370F27C296350067DB30 /* MainModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784E370E27C296350067DB30 /* MainModel.swift */; };
 		784E371427C298470067DB30 /* WeatherModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784E371327C298470067DB30 /* WeatherModel.swift */; };
@@ -26,6 +27,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		781DDEC627C526100059F0DE /* TimeFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeFunctions.swift; sourceTree = "<group>"; };
 		784E370B27C296110067DB30 /* ListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListModel.swift; sourceTree = "<group>"; };
 		784E370E27C296350067DB30 /* MainModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainModel.swift; sourceTree = "<group>"; };
 		784E371327C298470067DB30 /* WeatherModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherModel.swift; sourceTree = "<group>"; };
@@ -81,6 +83,7 @@
 				78A726C727BD7EF30001616C /* NetworkManager */,
 				78A726B227BD7ECE0001616C /* AppDelegate.swift */,
 				78A726B427BD7ECE0001616C /* SceneDelegate.swift */,
+				781DDEC627C526100059F0DE /* TimeFunctions.swift */,
 				786C6CB727BF9F6F00FFA739 /* SpinerView.swift */,
 				78A726B627BD7ECE0001616C /* ViewController.swift */,
 				78E2DAFE27C32386001CB8D6 /* TableViewCell.swift */,
@@ -195,6 +198,7 @@
 				78A726C927BD7F260001616C /* NetworkManager.swift in Sources */,
 				784E371927C2989F0067DB30 /* WindModel.swift in Sources */,
 				784E371C27C298F60067DB30 /* ListCity.swift in Sources */,
+				781DDEC727C526100059F0DE /* TimeFunctions.swift in Sources */,
 				786C6CB827BF9F6F00FFA739 /* SpinerView.swift in Sources */,
 				78A726B727BD7ECE0001616C /* ViewController.swift in Sources */,
 				78A726B327BD7ECE0001616C /* AppDelegate.swift in Sources */,
