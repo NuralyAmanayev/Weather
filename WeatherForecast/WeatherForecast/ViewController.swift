@@ -56,6 +56,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             DispatchQueue.main.async {
                 self.loadingMoreView.startAnimating()
                 self.mainWeatherModel = data
+                self.list = data[0].list
+            
                 self.CustomTableView.reloadData()
                 
                 Timer.scheduledTimer(withTimeInterval: 1.0, repeats: false){ timer in
@@ -73,14 +75,14 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return mainWeatherModel.count
+        return list.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let customCell = CustomTableView.dequeueReusableCell(withIdentifier: "CustomCell") as! TableViewCell
-        var mainWeatherModelArray = mainWeatherModel[indexPath.row]
-        customCell.JobLable.text = mainWeatherModel[0].list[0].dt_txt
+//        var listModelArray = list[indexPath.row]
+        customCell.JobLable.text = list[0].dt_txt
         return customCell
     }
                 
