@@ -9,49 +9,50 @@ import UIKit
 //import CoreLocation
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
-
+    
     //, CLLocationManagerDelegate{
-
+    
     var networkManager = NetworkManager()
     var mainWeatherModel = [MainWeatherModel]()
     var list = [ListModel]()
-
-    var getLocation = GetLocation()
+    //    var latit = GetLocation.latitude
+    //    var getLocation = GetLocation()
     var isMoreDataLoading = false
     var indicator = 0
     @IBOutlet weak var CustomTableView: UITableView!
     var loadingMoreView = SpinerView()
-
     
     
-
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        GetLocation.shared.setupLocation()
+        //        getLocation.setupLocation()
         loadingData()
         CustomTableView.delegate = self
         CustomTableView.dataSource = self
-
-
-
+        //        print(latit)
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        getLocation.setupLocation()
+        
     }
-
+    
     
     func loadingData(){
         
-
+        
         loadingMoreView.translatesAutoresizingMaskIntoConstraints = false
         loadingMoreView.widthAnchor.constraint(equalToConstant: 80).isActive = true
         loadingMoreView.heightAnchor.constraint(equalToConstant: 80).isActive = true
-                view.addSubview(loadingMoreView)
+        view.addSubview(loadingMoreView)
         loadingMoreView.centerYAnchor.constraint(equalTo: self.view.centerYAnchor).isActive = true
         loadingMoreView.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
-
+        
         networkManager.requestWeather { data in
             
             DispatchQueue.main.async {
@@ -84,10 +85,11 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         var listModelArray = list[indexPath.row]
         var mainWeatherModelArray = mainWeatherModel//[indexPath.row]
         customCell.JobLable.text = /* //mainWeatherModel[0].city.name */getHourForDate(listModelArray.date)
+        //        print(list[0].main.temp)
         return customCell
     }
-                
-
-
+    
+    
+    
 }
 

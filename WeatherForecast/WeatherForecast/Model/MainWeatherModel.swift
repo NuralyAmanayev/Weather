@@ -13,7 +13,7 @@ struct MainWeatherModel: Codable {
     var message: Float
     var cnt: Float
     var list: [ListModel]
-    var city: ListCity
+    var city: City
     
 }
 

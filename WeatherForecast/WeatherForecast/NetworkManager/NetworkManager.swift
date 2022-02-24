@@ -12,12 +12,15 @@ import Foundation
 
 class NetworkManager {
 //    var getloc = GetLocation()
-    var latitide = GetLocation.latitude
-    var longitude = GetLocation.longitude
+//    var latitide = GetLocation.latitude
+//    var longitude = GetLocation.longitude
+//    var lat = GetLocation.shared.latitude
+//    var longi = GetLocation.shared.longitude
     
     func requestWeather(result: @escaping ([MainWeatherModel]) -> ()){//}, latitude: Double, longitude: Double){
         let apiKey = "5308895e59599bce50322cbfd1f66036"
-        let url =  "https://api.openweathermap.org/data/2.5/forecast?lat=\(self.latitide)&lon=\(self.longitude)&appid=\(apiKey)"
+        print("\(GetLocation.shared.latitude)|||\(GetLocation.shared.longitude)")
+        let url =  "https://api.openweathermap.org/data/2.5/forecast?lat=\(GetLocation.shared.latitude)&lon=\(GetLocation.shared.longitude)&appid=\(apiKey)"
         URLSession.shared.dataTask(with: URL(string: url)!, completionHandler: { (data: Data?, response: URLResponse?, error: Error?) -> Void in
 
             // validation
@@ -31,7 +34,7 @@ class NetworkManager {
             var json: MainWeatherModel?
             do{
                 json = try JSONDecoder().decode(MainWeatherModel.self, from: data)
-//                print(json)
+                print(json)
                 
                 
                 guard let result1 = json else{
@@ -51,7 +54,7 @@ class NetworkManager {
 //            guard let result = json else{
 //                return
 //            }
-
+            print("\(GetLocation.shared.latitude)|||\(GetLocation.shared.longitude)")
             
         
         }).resume()
